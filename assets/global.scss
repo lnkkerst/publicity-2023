@@ -1,0 +1,7 @@
+@import url('@unocss/reset/tailwind.css');
+@import url('@catppuccin/palette/style');
+
+body {
+  background-color: #15121e;
+  color: var(--ctp-mocha-text);
+}

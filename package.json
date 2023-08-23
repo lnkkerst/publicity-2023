@@ -1,0 +1,61 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@catppuccin/palette": "^0.2.0",
+    "color": "^4.2.3",
+    "gsap": "file:assets/gsap.tgz",
+    "jquery": "^3.7.0",
+    "nuxt-swiper": "^1.2.0",
+    "pixi.js": "^7.2.4",
+    "remeda": "^1.25.0",
+    "swiper": "^10.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.40.2",
+    "@invictus.codes/nuxt-vuetify": "^0.3.0",
+    "@nuxt/devtools": "latest",
+    "@types/color": "^3.0.3",
+    "@types/jquery": "^3.5.16",
+    "@types/node": "^18.17.3",
+    "@unocss/nuxt": "^0.55.2",
+    "@unocss/reset": "^0.55.2",
+    "@vueuse/core": "^10.3.0",
+    "@vueuse/motion": "^2.0.0",
+    "@vueuse/nuxt": "^10.3.0",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "nuxt": "^3.6.5",
+    "nuxt-icon": "^0.5.0",
+    "nuxt-lodash": "^2.5.0",
+    "prettier": "^3.0.2",
+    "sass": "^1.66.1",
+    "unocss": "^0.55.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid",
+    "printWidth": 80,
+    "useTabs": false,
+    "quoteProps": "as-needed",
+    "bracketSpacing": true,
+    "rangeStart": 0,
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "ignore"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@antfu",
+      "prettier"
+    ]
+  }
+}
