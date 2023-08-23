@@ -28,7 +28,8 @@ function animateScroll() {
         return;
       }
       let index = trigger.progress * (slideLength + 1);
-      index -= 1;
+      index = Math.ceil(index);
+      index -= 2;
       index = Math.max(index, 0);
       index = Math.min(index, slideLength - 1);
       swiper.value.slideTo(index);
@@ -42,11 +43,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="parentEl" class="h-200vh relative">
+  <div ref="parentEl" class="h-400vh relative">
     <div ref="el" class="h-100vh sticky top-0">
-      <h1 class="text-12 h-3/10 grid place-items-center">在这里，你将收获</h1>
+      <h1
+        class="sm:text-12 text-8 h-3/10 pt-12 sm:pt-0 grid place-items-center"
+      >
+        在这里，你将收获
+      </h1>
       <Swiper
-        class="w-full h-360px grid place-items-center"
+        class="w-full h-540px sm:h-360px grid place-items-center"
         :modules="swiperModules"
         :space-between="30"
         :allow-touch-move="false"
@@ -63,11 +68,9 @@ onMounted(() => {
           ]"
           :key="cardComonent.name"
         >
-          <SwiperSlide
-            class="pancake-slide max-w-540px grid place-items-center"
-          >
+          <SwiperSlide class="pancake-slide max-w-540px w-4/5">
             <div>
-              <VCard :color="variants.mocha.surface0.hex">
+              <VCard :color="variants.mocha.surface0.hex" class="p-2 pt-1">
                 <component :is="cardComonent"></component>
               </VCard>
             </div>
@@ -78,8 +81,4 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
-.panckae-slide {
-  max-width: 240px;
-}
-</style>
+<style lang="scss" scoped></style>

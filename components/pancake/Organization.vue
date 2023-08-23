@@ -2,8 +2,8 @@
 
 <template>
   <div>
-    <div v-motion-slide-visible-top class="indent-8 text-5 px-6 py-4">
-      <h2 class="text-center text-8 my-2">提升个人能力</h2>
+    <div v-motion-slide-visible-top class="indent-8 text-4 md:text-5 px-6 py-4">
+      <h2 class="text-center md:text-8 text-6 my-2">提升个人能力</h2>
       <p>
         震惊！一个学生组织竟然设下了策划、宣传、运营、美工、代码开发等众多部门！
       </p>

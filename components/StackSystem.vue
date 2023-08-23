@@ -6,9 +6,9 @@ import $ from 'jquery';
 
 onMounted(() => {
   window.onresize = window.onload = function () {
-    gsap.set('.m1_stage', { x: '80%', opacity: 1 });
+    gsap.set('.m1_stage', { x: '50%', opacity: 1 });
   };
-  gsap.set('.m1_stage', { x: '80%', opacity: 1 });
+  gsap.set('.m1_stage', { x: '50%', opacity: 1 });
 
   gsap
     .timeline({ defaults: { duration: 45 } })

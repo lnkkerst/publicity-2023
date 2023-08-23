@@ -2,8 +2,8 @@
 
 <template>
   <div>
-    <div v-motion-slide-visible-top class="indent-8 text-5 px-6 py-4">
-      <h2 class="text-center text-8 my-2">是白嫖，还是友谊？</h2>
+    <div v-motion-slide-visible-top class="indent-8 text-4 md:text-5 px-6 py-4">
+      <h2 class="text-center text-6 sm:text-8 my-2">是白嫖，还是友谊？</h2>
       <p>加入web，究竟是友谊的缘起还是白嫖的开始？</p>
       <p>
         迎新大会的纪念品、狂欢夜大型晚会的定制荧光棒与小游戏奖励、

@@ -75,8 +75,8 @@ onMounted(() => {});
 <template>
   <div ref="parentEl" class="h-250vh relative">
     <div ref="el" class="h-100vh sticky top-0 grid place-items-center">
-      <div class="text-6 w-4/5 max-w-540px">
-        <div class="text-center text-10 p-sm">关于我们</div>
+      <div class="sm:text-6 text-5 w-4/5 max-w-540px">
+        <div class="text-center text-8 sm:text-10 p-sm">关于我们</div>
         <p
           ref="textEl"
           class="inline-block text-content"

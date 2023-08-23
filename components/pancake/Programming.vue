@@ -30,9 +30,9 @@ const icons = [
   <div class="grid grid-cols-3">
     <div
       v-motion-slide-visible-top
-      class="col-span-2 indent-8 text-5 px-6 py-4"
+      class="col-span-2 indent-8 text-4 sm:text-5 px-6 py-4"
     >
-      <h2 class="text-center text-8 my-2">学习一门技术</h2>
+      <h2 class="text-center sm:text-8 text-5 my-2">学习一门技术</h2>
       <p>想要制作自己网站？想要制作一个小程序？想要搭建自己的服务器？</p>
       <p>小孩子才做选择题，俺全都要学！</p>
       <p>
@@ -40,7 +40,7 @@ const icons = [
         让你知道什么是半专业的保姆教学团队！
       </p>
     </div>
-    <div class="text-10 icons">
+    <div class="sm:text-10 text-7 icons">
       <template v-for="(icon, index) in icons" :key="icon">
         <Icon v-if="index % 4 === 0" v-motion-roll-top :name="icon"></Icon>
         <Icon
