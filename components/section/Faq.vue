@@ -82,7 +82,7 @@ onMounted(() => {
 <template>
   <div>
     <div class="h-100vh relative">
-      <h2 class="text-center text-8 pt-12">
+      <h2 class="text-center text-8 pt-12 px-4">
         还有什么问题，就来问问全知的 Poi 酱吧！
       </h2>
       <div class="absolute bottom-0 w-full flex flex-col items-center">

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Draggable } from 'gsap/Draggable';
 import { variants } from '@catppuccin/palette';
-import { gsap } from 'gsap';
 import goodNightImg from '~/assets/img/GoodNight.jpg';
 import sduOneHourImg from '~/assets/img/SDUOneHour.png';
 import { ProjectGoodNight, ProjectSduOneHour } from '#components';
@@ -44,33 +43,30 @@ onMounted(() => {
     }
   });
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: parentEl.value,
-      start: 'top bottom'
-    }
-  });
-
-  tl.fromTo(
-    '.draggable',
-    {
-      x() {
-        return (Math.random() - 0.5) * 1000 + 300;
-      },
-      y() {
-        return (Math.random() - 0.5) * 1000 + 300;
-      }
-    },
-    {
-      x() {
-        return (dragContainer.value?.clientWidth ?? 1000) / 2;
-      },
-      y() {
-        return 0;
-      },
-      duration: 1
-    }
-  );
+  // gsap.fromTo(
+  //   '.draggable',
+  //   {
+  //     x() {
+  //       return (Math.random() - 0.5) * 1000 + 300;
+  //     },
+  //     y() {
+  //       return (Math.random() - 0.5) * 1000 + 300;
+  //     }
+  //   },
+  //   {
+  //     scrollTrigger: {
+  //       trigger: parentEl.value,
+  //       start: 'top bottom'
+  //     },
+  //     x() {
+  //       return (dragContainer.value?.clientWidth ?? 1000) / 2;
+  //     },
+  //     y() {
+  //       return 0;
+  //     },
+  //     duration: 1
+  //   }
+  // );
 });
 </script>
 
