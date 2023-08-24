@@ -34,6 +34,21 @@ useHead({
     }
   ]
 });
+
+// 修复移动设备因为输入法弹出导致视口高度变化引起的 bug
+onMounted(() => {
+  setTimeout(() => {
+    const viewport = document.querySelector(
+      'meta[name=viewport]'
+    ) as HTMLMetaElement;
+    if (viewport) {
+      viewport.setAttribute(
+        'content',
+        `${viewport.content}, height=${window.innerHeight}`
+      );
+    }
+  }, 2000);
+});
 </script>
 
 <template>

@@ -32,7 +32,9 @@ function animateScroll() {
       index -= 2;
       index = Math.max(index, 0);
       index = Math.min(index, slideLength - 1);
-      swiper.value.slideTo(index);
+      if (swiper.value.activeIndex !== index) {
+        swiper.value.slideTo(index);
+      }
     }
   });
 }

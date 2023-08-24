@@ -2,6 +2,12 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/global.scss'],
+  app: {
+    head: {
+      viewport:
+        'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'
+    }
+  },
   build: {
     transpile: ['gsap']
   },
