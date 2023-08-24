@@ -58,7 +58,7 @@ function animateText() {
       s = '<br />';
     }
     tl.to(tmp, {
-      duration: 0.1,
+      duration: 0.05,
       onComplete: () => {
         if (!textEl.value) {
           return;

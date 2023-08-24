@@ -10,13 +10,20 @@
   },
   "dependencies": {
     "@catppuccin/palette": "^0.2.0",
+    "@types/uuid": "^9.0.2",
     "color": "^4.2.3",
     "gsap": "file:assets/gsap.tgz",
+    "https-proxy-agent": "^7.0.1",
     "jquery": "^3.7.0",
+    "live2d-widget": "^3.1.4",
     "nuxt-swiper": "^1.2.0",
-    "pixi.js": "^7.2.4",
+    "oh-my-live2d": "^0.3.0",
+    "openai": "^4.2.0",
+    "pixi-live2d-display": "^0.4.0",
+    "pixi.js": "^6.5.10",
     "remeda": "^1.25.0",
-    "swiper": "^10.2.0"
+    "swiper": "^10.2.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.40.2",

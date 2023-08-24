@@ -5,6 +5,10 @@ export default defineNuxtConfig({
   build: {
     transpile: ['gsap']
   },
+  runtimeConfig: {
+    openaiApiKey: process.env.OPENAI_API_KEY,
+    httpProxy: 'http://localhost:20171'
+  },
   modules: [
     '@unocss/nuxt',
     'nuxt-swiper',
