@@ -47,9 +47,7 @@ onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: parentEl.value,
-      start: 'top bottom',
-      end: 'top top-=720',
-      scrub: 1
+      start: 'top bottom'
     }
   });
 
