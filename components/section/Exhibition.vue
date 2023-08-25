@@ -135,12 +135,12 @@ onMounted(() => {
       },
       top() {
         const min = height / 20;
-        const max = min + height * 0.5;
+        const max = min + height * 0.6;
         return Math.random() * (max - min) + min;
       },
       left() {
         const min = width / 20;
-        const max = min + width * 0.5;
+        const max = min + width * 0.8;
         return Math.random() * (max - min) + min;
       },
       duration: 0.5
