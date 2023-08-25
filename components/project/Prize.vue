@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import detailImg0 from '~/assets/img/web-vs/thumbnail.jpg';
+import detailImg0 from '~/assets/img/prize/thumbnail.jpg';
 </script>
 
 <template>
