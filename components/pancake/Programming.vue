@@ -41,19 +41,20 @@ const icons = [
       </p>
     </div>
     <div class="sm:text-10 text-7 icons">
-      <template v-for="(icon, index) in icons" :key="icon">
-        <Icon v-if="index % 4 === 0" v-motion-roll-top :name="icon"></Icon>
-        <Icon
-          v-else-if="index % 4 === 1"
-          v-motion-roll-right
-          :name="icon"
-        ></Icon>
-        <Icon
-          v-else-if="index % 4 === 2"
-          v-motion-roll-bottom
-          :name="icon"
-        ></Icon>
-        <Icon v-else v-motion-roll-left :name="icon"></Icon>
+      <template v-for="icon in icons" :key="icon">
+        <Icon :name="icon"></Icon>
+        <!-- <Icon v-if="index % 4 === 0" v-motion-roll-top :name="icon"></Icon> -->
+        <!-- <Icon -->
+        <!--   v-else-if="index % 4 === 1" -->
+        <!--   v-motion-roll-right -->
+        <!--   :name="icon" -->
+        <!-- ></Icon> -->
+        <!-- <Icon -->
+        <!--   v-else-if="index % 4 === 2" -->
+        <!--   v-motion-roll-bottom -->
+        <!--   :name="icon" -->
+        <!-- ></Icon> -->
+        <!-- <Icon v-else v-motion-roll-left :name="icon"></Icon> -->
       </template>
       <img
         src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/icon.png"
