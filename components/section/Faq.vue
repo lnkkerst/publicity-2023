@@ -17,6 +17,7 @@ const showAnswer = ref(false);
 const pinAnswer = ref(false);
 const answerd = ref(false);
 const sending = ref(false);
+const loadingSkin = ref(false);
 
 function getToken() {
   let token = localStorage.getItem('pioToken');
@@ -71,12 +72,14 @@ async function handleSendQuestion() {
 }
 
 async function handleChangeSkin() {
+  loadingSkin.value = true;
   try {
     await live2dEl.value.randomSkin?.();
     showMessage('我的新衣服好看吗？');
   } catch (_e) {
     showMessage('换装失败了...');
   }
+  loadingSkin.value = false;
 }
 
 onMounted(() => {
@@ -144,7 +147,7 @@ onMounted(() => {
           <VBtn
             variant="text"
             icon
-            :loading="sending"
+            :loading="loadingSkin"
             @click="handleChangeSkin"
           >
             <Icon name="game-icons:large-dress" class="text-6" />
