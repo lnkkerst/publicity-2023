@@ -8,11 +8,17 @@ import thisSiteImg from '~/assets/img/this-site/thumbnail.jpg';
 import draw2023Img from '~/assets/img/draw-2023/thumbnail.jpg';
 import graduationPictureImg from '~/assets/img/graduation-picture/thumbnail.jpg';
 import prizeImg from '~/assets/img/prize/thumbnail.jpg';
+import strangeYouImg from '~/assets/img/strange-you/thumbnail.jpg';
+import andMoreImg from '~/assets/img/and-more/thumbnail.jpg';
+import dualPartnerImg from '~/assets/img/dual-partner/thumbnail.jpg';
 import {
+  ProjectAndMore,
   ProjectDraw2023,
+  ProjectDualPartner,
   ProjectGraduationPicture,
   ProjectIForest,
   ProjectPrize,
+  ProjectStrangeYou,
   ProjectThisSite,
   ProjectWebVs
 } from '#components';
@@ -56,6 +62,24 @@ const projects = reactive([
     name: '展台抽奖系统',
     img: prizeImg,
     component: shallowRef(ProjectPrize),
+    active: false
+  },
+  {
+    name: '陌生的你',
+    img: strangeYouImg,
+    component: shallowRef(ProjectStrangeYou),
+    active: false
+  },
+  {
+    name: '决斗吧，对接人！',
+    img: dualPartnerImg,
+    component: shallowRef(ProjectDualPartner),
+    active: false
+  },
+  {
+    name: '还有更多',
+    img: andMoreImg,
+    component: shallowRef(ProjectAndMore),
     active: false
   }
 ]);
@@ -107,8 +131,7 @@ onMounted(() => {
     {
       scrollTrigger: {
         trigger: parentEl.value,
-        start: 'top top',
-        toggleActions: 'play none none reverse'
+        start: 'top top'
       },
       top() {
         const min = height / 20;

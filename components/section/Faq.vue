@@ -139,7 +139,7 @@ onMounted(() => {
           </div>
         </div>
 
-        <div class="absolute left-1 bottom-25">
+        <div class="absolute left-1 bottom-25 z-101">
           <VBtn
             variant="text"
             icon
