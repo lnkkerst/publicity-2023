@@ -23,7 +23,7 @@ function animateScroll() {
     trigger: parentEl.value,
     start: 'top top',
     end: 'bottom bottom',
-    onUpdate: trigger => {
+    onUpdate: useThrottle(trigger => {
       if (!swiper.value) {
         return;
       }
@@ -35,7 +35,7 @@ function animateScroll() {
       if (swiper.value.activeIndex !== index) {
         swiper.value.slideTo(index);
       }
-    }
+    }, 100)
   });
 }
 
