@@ -5,3 +5,12 @@ body {
   background-color: #15121e;
   color: var(--ctp-mocha-text);
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(127, 132, 156, 0.8);
+  border-radius: 3px;
+}
