@@ -5,7 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 const idleMessage = [
   'Poi 酱什么都知道哦',
   '你想要问什么呢？',
-  'Poi 被抓来当看板娘了 TAT'
+  'Poi 被抓来当看板娘了 TAT',
+  '关于这个页面的问题可以联系 qq1593510417 喵'
 ];
 const question = ref('');
 const answerContent = ref('');
