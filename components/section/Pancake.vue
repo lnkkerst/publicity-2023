@@ -70,7 +70,7 @@ onMounted(() => {
           ]"
           :key="cardComonent.name"
         >
-          <SwiperSlide class="pancake-slide max-w-540px w-4/5">
+          <SwiperSlide class="pancake-slide !max-w-540px !w-4/5">
             <div>
               <VCard :color="variants.mocha.surface0.hex" class="p-2 pt-1">
                 <component :is="cardComonent"></component>

@@ -162,7 +162,7 @@ onMounted(() => {
       <div ref="dragContainer" class="top-2/10 w-full h-8/10 absolute">
         <template v-for="(project, index) in projects" :key="project.name">
           <VCard
-            class="w-fit h-fit draggable absolute top-0 left-0"
+            class="w-fit h-fit draggable !absolute top-0 left-0"
             :color="variants.mocha.surface0.hex"
           >
             <VCardTitle class="text-center text-4 py-0">
