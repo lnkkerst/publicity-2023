@@ -14,9 +14,6 @@ import detailImg3 from '~/assets/img/draw-2023/detail-3.jpg';
           <div class="indent-8">
             <p>回答问题，抽取你的新年运势签！</p>
             <p>新手也能完成的项目！</p>
-            <div class="flex items-center flex-col mt-4">
-              <img :src="qrImg" class="max-h-24" />
-            </div>
           </div>
           <div
             class="img-container grid grid-cols-2 grid-rows-2 gap-2 place-items-center"
