@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Draggable } from 'gsap/Draggable';
 import { variants } from '@catppuccin/palette';
+import { gsap } from 'gsap';
 import goodNightImg from '~/assets/img/GoodNight.jpg';
 import sduOneHourImg from '~/assets/img/SDUOneHour.png';
 import { ProjectGoodNight, ProjectSduOneHour } from '#components';
@@ -43,30 +44,31 @@ onMounted(() => {
     }
   });
 
-  // gsap.fromTo(
-  //   '.draggable',
-  //   {
-  //     x() {
-  //       return (Math.random() - 0.5) * 1000 + 300;
-  //     },
-  //     y() {
-  //       return (Math.random() - 0.5) * 1000 + 300;
-  //     }
-  //   },
-  //   {
-  //     scrollTrigger: {
-  //       trigger: parentEl.value,
-  //       start: 'top bottom'
-  //     },
-  //     x() {
-  //       return (dragContainer.value?.clientWidth ?? 1000) / 2;
-  //     },
-  //     y() {
-  //       return 0;
-  //     },
-  //     duration: 1
-  //   }
-  // );
+  gsap.fromTo(
+    '.draggable',
+    {
+      top() {
+        return (Math.random() - 0.5) * 1000 + 300;
+      },
+      left() {
+        return (Math.random() - 0.5) * 1000 + 300;
+      }
+    },
+    {
+      scrollTrigger: {
+        trigger: parentEl.value,
+        start: 'top 60%',
+        toggleActions: 'play none none reverse'
+      },
+      top() {
+        return (dragContainer.value?.clientWidth ?? 1000) / 2;
+      },
+      left() {
+        return 0;
+      },
+      duration: 1
+    }
+  );
 });
 </script>
 
@@ -90,22 +92,27 @@ onMounted(() => {
             <div class="px-1 pb-1">
               <img
                 :src="project.img"
-                class="max-h-80 max-w-80"
+                class="max-h-60 max-w-60 md:max-h-80 md:max-w-80"
                 :data-project-index="index"
               />
             </div>
           </VCard>
-
-          <VDialog v-model="project.active">
-            <VCard :color="variants.mocha.surface0.hex">
-              <VCardTitle class="text-center text-4 py-0">
-                {{ project.name }}
-              </VCardTitle>
-              <component :is="project.component"></component>
-            </VCard>
-          </VDialog>
         </template>
       </div>
+
+      <VDialog
+        v-for="project in projects"
+        :key="project.name"
+        v-model="project.active"
+        scroll-strategy="none"
+      >
+        <VCard :color="variants.mocha.surface0.hex">
+          <VCardTitle class="text-center text-4 py-0">
+            {{ project.name }}
+          </VCardTitle>
+          <component :is="project.component"></component>
+        </VCard>
+      </VDialog>
     </div>
   </div>
 </template>

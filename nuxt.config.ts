@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     'nuxt-icon',
     'nuxt-lodash',
-    '@invictus.codes/nuxt-vuetify'
+    '@invictus.codes/nuxt-vuetify',
+    'nuxt-headlessui'
   ]
 });
