@@ -127,6 +127,8 @@ onMounted(() => {
     {
       // top: i => startPos[i].x,
       // left: i => startPos[i].y
+      top: 0,
+      left: 0
     },
     {
       scrollTrigger: {
@@ -135,12 +137,12 @@ onMounted(() => {
       },
       top() {
         const min = height / 20;
-        const max = min + height * 0.6;
+        const max = min + height * 0.5;
         return Math.random() * (max - min) + min;
       },
       left() {
         const min = width / 20;
-        const max = min + width * 0.8;
+        const max = min + width * 0.6;
         return Math.random() * (max - min) + min;
       },
       duration: 0.5
@@ -160,7 +162,7 @@ onMounted(() => {
       <div ref="dragContainer" class="top-2/10 w-full h-8/10 absolute">
         <template v-for="(project, index) in projects" :key="project.name">
           <VCard
-            class="w-fit h-fit draggable absolute"
+            class="w-fit h-fit draggable absolute top-0 left-0"
             :color="variants.mocha.surface0.hex"
           >
             <VCardTitle class="text-center text-4 py-0">

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { variants } from '@catppuccin/palette';
 import { Application, Ticker } from 'pixi.js';
 
 const props = withDefaults(
@@ -151,9 +152,13 @@ onMounted(async () => {
       contained
       scroll-strategy="none"
       :model-value="loading"
-      class="grid place-items-center"
+      class="flex items-center justify-center"
     >
-      <VProgressCircular indeterminate size="large"></VProgressCircular>
+      <VProgressCircular
+        indeterminate
+        size="large"
+        :color="variants.mocha.lavender.hex"
+      ></VProgressCircular>
     </VOverlay>
     <canvas ref="canvas"></canvas>
   </div>

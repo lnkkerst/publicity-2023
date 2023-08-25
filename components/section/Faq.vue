@@ -101,7 +101,7 @@ onMounted(() => {
       <div class="absolute bottom-0 w-full flex flex-col items-center">
         <VCard
           variant="outlined"
-          class="transition-all duration-1000 max-w-120 hover:opacity-100"
+          class="transition-all duration-1000 max-w-120 hover:opacity-100 mb-2"
           :style="{
             opacity: pinAnswer || showAnswer || answerd ? 1 : 0
           }"
