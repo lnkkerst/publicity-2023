@@ -311,7 +311,7 @@ onMounted(() => {
           />
           <g class="m1Orb orb4b">
             <image
-              xlink:href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg"
+              xlink:href="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original-wordmark.svg"
               width="40"
               height="40"
             />
@@ -319,7 +319,7 @@ onMounted(() => {
 
           <g class="m1Orb orb4">
             <image
-              xlink:href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
+              xlink:href="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
               width="40"
               height="40"
             />
@@ -341,7 +341,7 @@ onMounted(() => {
 
           <g class="m1Orb orb3c">
             <image
-              xlink:href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
+              xlink:href="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
               width="40"
               height="40"
             />
@@ -349,14 +349,14 @@ onMounted(() => {
 
           <g class="m1Orb orb3b">
             <image
-              xlink:href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"
+              xlink:href="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"
               width="40"
               height="40"
             />
           </g>
           <g class="m1Orb orb3">
             <image
-              xlink:href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+              xlink:href="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
               width="40"
               height="40"
             />
@@ -378,7 +378,7 @@ onMounted(() => {
 
           <g class="m1Orb orb2">
             <image
-              xlink:href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg"
+              xlink:href="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg"
               width="40"
               height="40"
             />
@@ -414,7 +414,7 @@ onMounted(() => {
           />
           <g class="m1Orb orb1">
             <image
-              xlink:href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              xlink:href="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
               width="40"
               height="40"
             />

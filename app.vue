@@ -30,7 +30,7 @@ useHead({
       src: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js'
     },
     {
-      src: 'https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js'
+      src: 'https://fastly.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js'
     }
   ]
 });

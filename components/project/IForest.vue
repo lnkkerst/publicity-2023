@@ -10,7 +10,7 @@ import detailImg1 from '~/assets/img/iforest/detail-1.jpg';
       <VCardText>
         <div class="grid grid-cols-2 gap-2">
           <div class="indent-8">
-            <p>iForest 是由 Kynix 开发的一款云种树小程序。</p>
+            <p>iForest 是由 Kynix 和稽鸽鸽领导开发的一款云种树小程序。</p>
             <p>该项目目前正在重构阶段。</p>
           </div>
           <div class="img-container grid grid-cols-2 gap-2">
