@@ -35,7 +35,12 @@ onMounted(async () => {
 
 <template>
   <div ref="container" class="w-fit h-fit z-100 relative">
-    <VOverlay contained :model-value="loading" class="grid place-items-center">
+    <VOverlay
+      contained
+      scroll-strategy="none"
+      :model-value="loading"
+      class="grid place-items-center"
+    >
       <VProgressCircular indeterminate size="large"></VProgressCircular>
     </VOverlay>
     <canvas ref="canvas"></canvas>

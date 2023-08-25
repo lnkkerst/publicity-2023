@@ -2,9 +2,20 @@
 import { Draggable } from 'gsap/Draggable';
 import { variants } from '@catppuccin/palette';
 import { gsap } from 'gsap';
-import goodNightImg from '~/assets/img/GoodNight.jpg';
-import sduOneHourImg from '~/assets/img/SDUOneHour.png';
-import { ProjectGoodNight, ProjectSduOneHour } from '#components';
+import webVsImg from '~/assets/img/web-vs/thumbnail.jpg';
+import iForestImg from '~/assets/img/iforest/thumbnail.jpg';
+import thisSiteImg from '~/assets/img/this-site/thumbnail.jpg';
+import draw2023Img from '~/assets/img/draw-2023/thumbnail.jpg';
+import graduationPictureImg from '~/assets/img/graduation-picture/thumbnail.jpg';
+import prizeImg from '~/assets/img/prize/thumbnail.jpg';
+import {
+  ProjectDraw2023,
+  ProjectGraduationPicture,
+  ProjectIForest,
+  ProjectPrize,
+  ProjectThisSite,
+  ProjectWebVs
+} from '#components';
 
 const parentEl = ref<HTMLDivElement>();
 const el = ref<HTMLDivElement>();
@@ -12,15 +23,39 @@ const dragContainer = ref<HTMLDivElement>();
 
 const projects = reactive([
   {
-    name: '晚安计划',
-    img: goodNightImg,
-    component: shallowRef(ProjectGoodNight),
+    name: 'Web 语言大战甲方',
+    img: webVsImg,
+    component: shallowRef(ProjectWebVs),
     active: false
   },
   {
-    name: '山大一小时',
-    img: sduOneHourImg,
-    component: shallowRef(ProjectSduOneHour),
+    name: 'iForest',
+    img: iForestImg,
+    component: shallowRef(ProjectIForest),
+    active: false
+  },
+  {
+    name: '你正在看的这个页面',
+    img: thisSiteImg,
+    component: shallowRef(ProjectThisSite),
+    active: false
+  },
+  {
+    name: '新春上上签',
+    img: draw2023Img,
+    component: shallowRef(ProjectDraw2023),
+    active: false
+  },
+  {
+    name: '毕业照报名系统',
+    img: graduationPictureImg,
+    component: shallowRef(ProjectGraduationPicture),
+    active: false
+  },
+  {
+    name: '展台抽奖系统',
+    img: prizeImg,
+    component: shallowRef(ProjectPrize),
     active: false
   }
 ]);
@@ -44,29 +79,49 @@ onMounted(() => {
     }
   });
 
+  const r = Math.round(
+    Math.sqrt(window.innerHeight ** 2 + window.innerWidth ** 2) / 2
+  );
+  const c = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  const startPos = Array.from({ length: projects.length }, () => {
+    const rotate = Math.random() * 360;
+    let x = r * Math.sin((rotate / 180) * Math.PI);
+    let y = r * Math.cos((rotate / 180) * Math.PI);
+    x += c.x;
+    y += c.y;
+    if (x > c.x) {
+      x += c.x;
+    } else {
+      x -= c.x;
+    }
+    return { x: c.x + x, y: c.y + y };
+  });
+
   gsap.fromTo(
     '.draggable',
     {
-      top() {
-        return (Math.random() - 0.5) * 1000 + 300;
-      },
-      left() {
-        return (Math.random() - 0.5) * 1000 + 300;
-      }
+      top: i => startPos[i].x,
+      left: i => startPos[i].y
     },
     {
       scrollTrigger: {
         trigger: parentEl.value,
-        start: 'top 60%',
+        start: 'top top',
         toggleActions: 'play none none reverse'
       },
       top() {
-        return (dragContainer.value?.clientWidth ?? 1000) / 2;
+        const height = dragContainer.value?.clientHeight ?? 320;
+        const min = height / 4;
+        const max = min + height / 2;
+        return Math.random() * (max - min) + min;
       },
       left() {
-        return 0;
+        const width = dragContainer.value?.clientWidth ?? 320;
+        const min = width / 4;
+        const max = min + width / 2;
+        return Math.random() * (max - min) + min;
       },
-      duration: 1
+      duration: 0.5
     }
   );
 });
@@ -75,12 +130,12 @@ onMounted(() => {
 <template>
   <div ref="parentEl" class="h-200vh relative">
     <div ref="el" class="h-100vh sticky top-0">
-      <h2 class="text-8 sm:text-12 h-2/10 w-full relative">
+      <h2 class="text-8 sm:text-12 h-2/10 w-full absolute">
         <span class="mx-auto absolute bottom-6 left-1/2 translate-x--1/2">
           我们的作品
         </span>
       </h2>
-      <div ref="dragContainer" class="top-24 w-full h-8/10">
+      <div ref="dragContainer" class="top-2/10 w-full h-8/10 absolute">
         <template v-for="(project, index) in projects" :key="project.name">
           <VCard
             class="w-fit h-fit draggable absolute"
@@ -89,7 +144,7 @@ onMounted(() => {
             <VCardTitle class="text-center text-4 py-0">
               {{ project.name }}
             </VCardTitle>
-            <div class="px-1 pb-1">
+            <div class="px-1 pb-1 grid place-items-center">
               <img
                 :src="project.img"
                 class="max-h-60 max-w-60 md:max-h-80 md:max-w-80"
@@ -105,16 +160,16 @@ onMounted(() => {
         :key="project.name"
         v-model="project.active"
         scroll-strategy="none"
+        class="z-100"
+        width="auto"
       >
-        <VCard :color="variants.mocha.surface0.hex">
-          <VCardTitle class="text-center text-4 py-0">
-            {{ project.name }}
-          </VCardTitle>
-          <component :is="project.component"></component>
-        </VCard>
+        <component
+          :is="project.component"
+          class="card-container max-w-200"
+        ></component>
       </VDialog>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped></style>
