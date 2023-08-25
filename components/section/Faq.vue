@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { variants } from '@catppuccin/palette';
 import { v4 as uuidv4 } from 'uuid';
+import { Live2d } from '#components';
 
+const live2dEl = ref<any>();
 const idleMessage = [
   'Poi 酱什么都知道哦',
   '你想要问什么呢？',
@@ -67,6 +69,15 @@ async function handleSendQuestion() {
   }
 }
 
+async function handleChangeSkin() {
+  try {
+    await live2dEl.value.randomSkin?.();
+    showMessage('我的新衣服好看吗？');
+  } catch (_e) {
+    showMessage('换装失败了...');
+  }
+}
+
 onMounted(() => {
   useIntervalFn(() => {
     if (showAnswer.value) {
@@ -102,7 +113,7 @@ onMounted(() => {
             </span>
           </VCardText>
         </VCard>
-        <Live2d :scale="0.5"></Live2d>
+        <Live2d ref="live2dEl" :scale="0.5"></Live2d>
         <div
           class="flex w-full h-24 border-t-1"
           :style="{ borderColor: variants.mocha.text.hex }"
@@ -126,6 +137,17 @@ onMounted(() => {
               <span class="pl-2">发送</span>
             </VBtn>
           </div>
+        </div>
+
+        <div class="absolute left-1 bottom-25">
+          <VBtn
+            variant="text"
+            icon
+            :loading="sending"
+            @click="handleChangeSkin"
+          >
+            <Icon name="game-icons:large-dress" class="text-6" />
+          </VBtn>
         </div>
       </div>
     </div>
