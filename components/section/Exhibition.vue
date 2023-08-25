@@ -79,10 +79,11 @@ onMounted(() => {
     }
   });
 
-  const r = Math.round(
-    Math.sqrt(window.innerHeight ** 2 + window.innerWidth ** 2) / 2
-  );
-  const c = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  const height = dragContainer.value?.clientHeight ?? 320;
+  const width = dragContainer.value?.clientWidth ?? 320;
+
+  const r = Math.round(Math.sqrt(height ** 2 + width ** 2) / 2);
+  const c = { x: width / 2, y: height / 2 };
   const startPos = Array.from({ length: projects.length }, () => {
     const rotate = Math.random() * 360;
     let x = r * Math.sin((rotate / 180) * Math.PI);
@@ -94,14 +95,14 @@ onMounted(() => {
     } else {
       x -= c.x;
     }
-    return { x: c.x + x, y: c.y + y };
+    return { x, y };
   });
 
   gsap.fromTo(
     '.draggable',
     {
-      top: i => startPos[i].x,
-      left: i => startPos[i].y
+      // top: i => startPos[i].x,
+      // left: i => startPos[i].y
     },
     {
       scrollTrigger: {
@@ -110,15 +111,13 @@ onMounted(() => {
         toggleActions: 'play none none reverse'
       },
       top() {
-        const height = dragContainer.value?.clientHeight ?? 320;
-        const min = height / 4;
-        const max = min + height / 2;
+        const min = height / 20;
+        const max = min + height * 0.5;
         return Math.random() * (max - min) + min;
       },
       left() {
-        const width = dragContainer.value?.clientWidth ?? 320;
-        const min = width / 4;
-        const max = min + width / 2;
+        const min = width / 20;
+        const max = min + width * 0.5;
         return Math.random() * (max - min) + min;
       },
       duration: 0.5
