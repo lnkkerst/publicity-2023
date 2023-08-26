@@ -136,7 +136,9 @@ async function randomSkin() {
 onMounted(async () => {
   app.value = new Application({
     view: canvas.value,
-    backgroundAlpha: 0
+    backgroundAlpha: 0,
+    width: 300,
+    height: 300
   });
 
   if (!canvas.value) {
