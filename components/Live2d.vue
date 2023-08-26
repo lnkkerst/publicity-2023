@@ -17,7 +17,7 @@ const loading = ref(true);
 
 const app = ref<Application>();
 const modelJsonUrl =
-  'https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/model/Potion-Maker/Pio/index.json';
+  'https://gcore.jsdelivr.net/gh/fghrsh/live2d_api/model/Potion-Maker/Pio/index.json';
 const modelJson = await $fetch<any>(modelJsonUrl);
 modelJson.url = modelJsonUrl;
 const skinList = [
