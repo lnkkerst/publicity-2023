@@ -27,10 +27,10 @@ useHead({
   title: '0nlineTek Web - 山东大学学生在线',
   script: [
     {
-      src: 'https://gcore.jsdelivr.net/npm/live2dcubismcore@1.0.2/live2dcubismcore.min.js'
+      src: 'https://fastly.jsdelivr.net/npm/live2dcubismcore@1.0.2/live2dcubismcore.min.js'
     },
     {
-      src: 'https://gcore.jsdelivr.net/npm/live2dcubismcore@1.0.2/live2d.min.js'
+      src: 'https://fastly.jsdelivr.net/npm/live2dcubismcore@1.0.2/live2d.min.js'
     }
   ]
 });
