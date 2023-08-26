@@ -117,7 +117,7 @@ onMounted(() => {
             </span>
           </VCardText>
         </VCard>
-        <Live2d ref="live2dEl" :scale="0.5"></Live2d>
+        <Live2d ref="live2dEl" class="max-h-100" :scale="0.5"></Live2d>
         <div
           class="flex w-full h-24 border-t-1"
           :style="{ borderColor: variants.mocha.text.hex }"
