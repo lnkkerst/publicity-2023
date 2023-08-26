@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { variants } from '@catppuccin/palette';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { type Swiper as SwiperClass } from 'swiper';
+import { gsap } from 'gsap';
 import {
   PancakeFun,
   PancakeOrganization,
@@ -18,25 +18,19 @@ function animateScroll() {
   if (!parentEl.value) {
     return;
   }
-  const slideLength = swiper.value?.slides.length ?? 0;
-  ScrollTrigger.create({
-    trigger: parentEl.value,
-    start: 'top top',
-    end: 'bottom bottom',
-    onUpdate: useThrottle(trigger => {
-      if (!swiper.value) {
-        return;
+  gsap.fromTo(
+    '.pancake-swiper .swiper-wrapper',
+    { xPercent: 0 },
+    {
+      xPercent: -200,
+      scrollTrigger: {
+        trigger: parentEl.value,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true
       }
-      let index = trigger.progress * (slideLength + 1);
-      index = Math.ceil(index);
-      index -= 2;
-      index = Math.max(index, 0);
-      index = Math.min(index, slideLength - 1);
-      if (swiper.value.activeIndex !== index) {
-        swiper.value.slideTo(index);
-      }
-    }, 100)
-  });
+    }
+  );
 }
 
 onMounted(() => {
@@ -45,7 +39,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="parentEl" class="h-400vh relative">
+  <div ref="parentEl" class="h-300vh relative">
     <div ref="el" class="h-100vh sticky top-0">
       <h1
         class="sm:text-12 text-8 h-3/10 pt-12 sm:pt-0 grid place-items-center"
@@ -53,12 +47,13 @@ onMounted(() => {
         在这里，你将收获
       </h1>
       <Swiper
-        class="w-full h-540px sm:h-360px grid place-items-center"
+        class="pancake-swiper w-full h-540px sm:h-360px grid place-items-center"
         :modules="swiperModules"
         :space-between="30"
         :allow-touch-move="false"
         slides-per-view="auto"
         :centered-slides="true"
+        :free-mode="true"
         :centered-slides-bounds="false"
         @swiper="(ins: SwiperClass) => (swiper = ins)"
       >

@@ -29,6 +29,12 @@ const dragContainer = ref<HTMLDivElement>();
 
 const projects = reactive([
   {
+    name: '还有更多',
+    img: andMoreImg,
+    component: shallowRef(ProjectAndMore),
+    active: false
+  },
+  {
     name: 'Web 语言大战甲方',
     img: webVsImg,
     component: shallowRef(ProjectWebVs),
@@ -68,18 +74,13 @@ const projects = reactive([
     name: '陌生的你',
     img: strangeYouImg,
     component: shallowRef(ProjectStrangeYou),
-    active: false
+    active: false,
+    disabled: true
   },
   {
     name: '决斗吧，对接人！',
     img: dualPartnerImg,
     component: shallowRef(ProjectDualPartner),
-    active: false
-  },
-  {
-    name: '还有更多',
-    img: andMoreImg,
-    component: shallowRef(ProjectAndMore),
     active: false
   }
 ]);
@@ -88,21 +89,6 @@ onMounted(() => {
   if (!dragContainer.value) {
     return;
   }
-  Draggable.create('.draggable', {
-    bounds: dragContainer.value,
-    edgeResistance: 0.65,
-    type: 'x,y',
-    inertia: true,
-    onClick: evt => {
-      const index = evt.target.dataset.projectIndex;
-      if (!index) {
-        return;
-      }
-      const project = projects[index];
-      project.active = true;
-    }
-  });
-
   const height = dragContainer.value?.clientHeight ?? 320;
   const width = dragContainer.value?.clientWidth ?? 320;
 
@@ -133,19 +119,35 @@ onMounted(() => {
     {
       scrollTrigger: {
         trigger: parentEl.value,
-        start: 'top top'
+        start: 'top 50%'
       },
-      top() {
+      x() {
         const min = height / 20;
         const max = min + height * 0.5;
         return Math.random() * (max - min) + min;
       },
-      left() {
+      y() {
         const min = width / 20;
         const max = min + width * 0.6;
         return Math.random() * (max - min) + min;
       },
-      duration: 0.5
+      duration: 0.5,
+      onComplete() {
+        Draggable.create('.draggable', {
+          bounds: dragContainer.value,
+          edgeResistance: 0.65,
+          type: 'x,y',
+          inertia: true,
+          onClick: evt => {
+            const index = evt.target.dataset.projectIndex;
+            if (!index) {
+              return;
+            }
+            const project = projects[index];
+            project.active = true;
+          }
+        });
+      }
     }
   );
 });
@@ -162,6 +164,7 @@ onMounted(() => {
       <div ref="dragContainer" class="top-2/10 w-full h-8/10 absolute">
         <template v-for="(project, index) in projects" :key="project.name">
           <VCard
+            v-if="!project.disabled"
             class="w-fit h-fit draggable !absolute top-0 left-0"
             :color="variants.mocha.surface0.hex"
           >
@@ -171,7 +174,7 @@ onMounted(() => {
             <div class="px-1 pb-1 grid place-items-center">
               <img
                 :src="project.img"
-                class="max-h-60 max-w-60 md:max-h-80 md:max-w-80"
+                class="max-h-60 max-w-40 md:max-h-80 md:max-w-80"
                 :data-project-index="index"
               />
             </div>
