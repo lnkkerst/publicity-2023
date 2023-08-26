@@ -5,9 +5,9 @@ import { Live2d } from '#components';
 
 const live2dEl = ref<any>();
 const idleMessage = [
-  'Poi 酱什么都知道哦',
+  'Pio 酱什么都知道哦',
   '你想要问什么呢？',
-  'Poi 被抓来当看板娘了 TAT',
+  'Pio 被抓来当看板娘了 TAT',
   '关于这个页面的问题可以联系 qq1593510417 喵',
   'Ciallo～(∠・ω< )_'
 ];
@@ -99,7 +99,7 @@ onMounted(() => {
   <div>
     <div class="h-100vh relative">
       <h2 class="text-center text-8 pt-12 px-4">
-        还有什么问题，就来问问全知的 Poi 酱吧！
+        还有什么问题，就来问问全知的 Pio 酱吧！
       </h2>
       <div class="absolute bottom-0 w-full flex flex-col items-center">
         <VCard

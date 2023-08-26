@@ -28,10 +28,7 @@ const icons = [
 
 <template>
   <div class="grid grid-cols-3">
-    <div
-      v-motion-slide-visible-top
-      class="col-span-2 indent-8 text-4 sm:text-5 px-6 py-4"
-    >
+    <div class="col-span-2 indent-8 text-4 sm:text-5 px-6 py-4">
       <h2 class="text-center sm:text-8 text-5 my-2">学习一门技术</h2>
       <p>想要制作自己网站？想要制作一个小程序？想要搭建自己的服务器？</p>
       <p>小孩子才做选择题，俺全都要学！</p>
