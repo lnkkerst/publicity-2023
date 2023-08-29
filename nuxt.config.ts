@@ -57,7 +57,8 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'nuxt-lodash',
     '@invictus.codes/nuxt-vuetify',
-    'nuxt-headlessui'
+    'nuxt-headlessui',
+    'nuxt-security'
   ],
   vuetify: {
     vuetifyOptions: {
@@ -68,6 +69,18 @@ export default defineNuxtConfig({
           light: catppuccinLatteTheme,
           system: catppucinMochaTheme
         }
+      }
+    }
+  },
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        'img-src': [
+          "'self'",
+          'data:',
+          '*.jsdelivr.net',
+          'raw.githubusercontent.com'
+        ]
       }
     }
   }

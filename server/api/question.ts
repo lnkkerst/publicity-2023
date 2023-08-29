@@ -1,5 +1,6 @@
 import { OpenAI } from 'openai';
 import { HttpsProxyAgent } from 'https-proxy-agent';
+import { getClientIp } from 'request-ip';
 
 const openai = new OpenAI({
   apiKey: useRuntimeConfig().openaiApiKey
@@ -10,6 +11,7 @@ if (process.dev) {
 }
 
 const sessionSet = new Set();
+const ipSet = new Set();
 
 const presetText = `
 你现在是一位名叫 Pio 的可爱女孩，你被安排作为山东大学学生在线 0nlineTek Web 开发部门的纳新答疑专家，负责回答后面关于山东大学学生在线兴隆山校区技术 Web 开发部门的问题，也可以闲聊。
@@ -32,6 +34,10 @@ export default defineEventHandler(async evt => {
   if (sessionSet.has(token)) {
     return 'Pio 酱 10 秒内只能回答你一次问题哦';
   }
+  const ip = getClientIp(evt.node.req);
+  if (ipSet.has(ip)) {
+    return 'Pio 酱 10 秒内只能回答你一次问题哦';
+  }
   const completion = await openai.chat.completions.create({
     messages: [
       { role: 'user', content: presetText },
@@ -44,6 +50,10 @@ export default defineEventHandler(async evt => {
   sessionSet.add(token);
   setTimeout(() => {
     sessionSet.delete(token);
+  }, 10 * 1000);
+  ipSet.add(ip);
+  setTimeout(() => {
+    ipSet.delete(ip);
   }, 10 * 1000);
 
   return completion.choices[0].message.content;

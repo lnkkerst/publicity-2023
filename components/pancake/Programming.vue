@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import uniappIcon from '~/assets/img/uniapp-icon.png';
 const icons = [
   'logos:visual-studio-code',
   'logos:webstorm',
@@ -53,10 +54,7 @@ const icons = [
         <!-- ></Icon> -->
         <!-- <Icon v-else v-motion-roll-left :name="icon"></Icon> -->
       </template>
-      <img
-        src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/icon.png"
-        class="inline-block h-1em w-1em"
-      />
+      <img :src="uniappIcon" class="inline-block h-1em w-1em" />
     </div>
   </div>
 </template>
