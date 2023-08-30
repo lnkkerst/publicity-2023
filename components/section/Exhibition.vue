@@ -121,12 +121,12 @@ onMounted(() => {
         trigger: parentEl.value,
         start: 'top 50%'
       },
-      x() {
+      y() {
         const min = height / 20;
         const max = min + height * 0.5;
         return Math.random() * (max - min) + min;
       },
-      y() {
+      x() {
         const min = width / 20;
         const max = min + width * 0.6;
         return Math.random() * (max - min) + min;
