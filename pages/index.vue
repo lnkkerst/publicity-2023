@@ -29,10 +29,12 @@ onMounted(() => {
     });
   }
 });
+const qqgroup = ref(true);
 </script>
 
 <template>
   <main class="scroll-smooth">
+    <QqGroupAside v-model="qqgroup"></QqGroupAside>
     <div ref="bongoCatEl" class="fixed bottom-0 right-0">
       <BongoCatCodes></BongoCatCodes>
     </div>
