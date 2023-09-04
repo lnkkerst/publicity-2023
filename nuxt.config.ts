@@ -70,6 +70,9 @@ export default defineNuxtConfig({
           system: catppucinMochaTheme
         }
       }
+    },
+    moduleOptions: {
+      useIconCDN: false
     }
   },
   security: {
