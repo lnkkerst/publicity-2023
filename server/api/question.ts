@@ -44,7 +44,7 @@ export default defineEventHandler(async evt => {
       { role: 'user', content: body.question }
     ],
     model: 'gpt-3.5-turbo',
-    max_tokens: 4096
+    max_tokens: 3072
   });
 
   sessionSet.add(token);
