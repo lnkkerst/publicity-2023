@@ -33,15 +33,7 @@ useHead({
       src: 'https://fastly.jsdelivr.net/npm/live2dcubismcore@1.0.2/live2d.min.js'
     },
     {
-      textContent: `
-  var _hmt = _hmt || [];
-  (function () {
-    var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?a304ec8a3bc39058eea0ae6eb8b95378';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode?.insertBefore(hm, s);
-  })();
-`
+      src: 'https://hm.baidu.com/hm.js?a304ec8a3bc39058eea0ae6eb8b95378'
     }
   ]
 });
