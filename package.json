@@ -70,7 +70,8 @@
       "prettier"
     ],
     "rules": {
-      "no-process-env": false
+      "no-process-env": [0],
+      "n/prefer-global/process": [0]
     }
   }
 }

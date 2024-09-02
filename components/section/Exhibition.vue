@@ -11,8 +11,10 @@ import prizeImg from '~/assets/img/prize/thumbnail.jpg';
 import strangeYouImg from '~/assets/img/strange-you/thumbnail.jpg';
 import andMoreImg from '~/assets/img/and-more/thumbnail.jpg';
 import dualPartnerImg from '~/assets/img/dual-partner/thumbnail.jpg';
+import boothMapImg from '~/assets/img/booth-map/thumbnail.jpg';
 import {
   ProjectAndMore,
+  ProjectBoothMap,
   ProjectDraw2023,
   ProjectDualPartner,
   ProjectGraduationPicture,
@@ -81,6 +83,12 @@ const projects = reactive([
     name: '决斗吧，对接人！',
     img: dualPartnerImg,
     component: shallowRef(ProjectDualPartner),
+    active: false
+  },
+  {
+    name: '毕业跑展台地图',
+    img: boothMapImg,
+    component: shallowRef(ProjectBoothMap),
     active: false
   }
 ]);

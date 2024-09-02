@@ -1,27 +1,15 @@
 <script setup lang="ts">
-import { variants } from '@catppuccin/palette';
 import QqGroupXlsQrImg from '~/assets/img/qqgroupqr-xls.png';
-import QqGroupZxQrImg from '~/assets/img/qqgroupqr-zx.png';
 
-const props = defineProps<{
-  modelValue: boolean;
-}>();
-const emit = defineEmits(['update:modelValue']);
 const active = ref(true);
 
 const items = [
   {
-    url: 'https://qm.qq.com/q/lJye8TGb74',
+    url: 'https://qm.qq.com/q/vNE4UR4mYK',
     img: QqGroupXlsQrImg,
-    btnText: '点击加入纳新QQ群(兴隆山校区)',
-    detailText: '群号：906743256'
+    btnText: '点击加入纳新QQ群(学线兴隆山总群)',
+    detailText: '群号：867116942'
   },
-  {
-    url: 'https://qm.qq.com/q/QLLONiIvwA',
-    img: QqGroupZxQrImg,
-    btnText: '点击加入纳新QQ群(中心校区和其他)',
-    detailText: '群号：906965915'
-  }
 ];
 </script>
 
@@ -41,8 +29,8 @@ const items = [
             @click="active = !active"
           >
             <Icon
-              name="material-symbols:keyboard-double-arrow-left"
               v-if="!active"
+              name="material-symbols:keyboard-double-arrow-left"
             ></Icon>
             <Icon
               v-else
@@ -50,7 +38,7 @@ const items = [
             ></Icon>
           </div>
           <div class="flex flex-col">
-            <div v-for="item in items" class="flex flex-row items-center">
+            <div v-for="item in items" :key="item.url" class="flex flex-row items-center">
               <div class="p-1">
                 <img class="h-14" :src="item.img" />
               </div>
