@@ -7,7 +7,7 @@ import detailImg1 from '~/assets/img/this-site/detail-1.jpg';
   <div>
     <VCard>
       <VCardTitle class="text-center py-2">
-        0nlineTek Web 2023 年的宣传页面
+        0nlineTek Web 2024 年的宣传页面
       </VCardTitle>
       <VCardText>
         <div class="grid grid-cols-2 gap-4 p-2">
