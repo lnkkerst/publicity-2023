@@ -1,15 +1,22 @@
 <script setup lang="ts">
 import QqGroupXlsQrImg from '~/assets/img/qqgroupqr-xls.png';
+import QqGroupXlsWebQrImg from '~/assets/img/qqgroupqr-xls.png';
 
 const active = ref(true);
 
 const items = [
   {
+    url: 'https://qm.qq.com/q/3Jupquv8TK',
+    img: QqGroupXlsWebQrImg,
+    btnText: '点击加入纳新QQ群(兴隆山Web)',
+    detailText: '群号：764662729'
+  },
+  {
     url: 'https://qm.qq.com/q/vNE4UR4mYK',
     img: QqGroupXlsQrImg,
     btnText: '点击加入纳新QQ群(学线兴隆山总群)',
     detailText: '群号：867116942'
-  },
+  }
 ];
 </script>
 
@@ -38,7 +45,11 @@ const items = [
             ></Icon>
           </div>
           <div class="flex flex-col">
-            <div v-for="item in items" :key="item.url" class="flex flex-row items-center">
+            <div
+              v-for="item in items"
+              :key="item.url"
+              class="flex flex-row items-center"
+            >
               <div class="p-1">
                 <img class="h-14" :src="item.img" />
               </div>
